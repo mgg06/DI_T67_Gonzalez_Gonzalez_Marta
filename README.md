@@ -32,8 +32,6 @@ Si tienes Maven instalado, también puedes ejecutarlo desde la carpeta del proye
 mvn javafx:run
 ```
 
-El lanzador `iniciar-gymfit.cmd` está preparado para mi equipo: utiliza el runtime de Scene Builder o la instalación de Java 8 con JavaFX indicada en el archivo. Para abrirlo en otro ordenador, utiliza la opción de Maven
-
 ## Archivos principales
 
 | Archivo | Contenido |

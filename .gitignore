@@ -5,3 +5,6 @@ build/
 datos/
 *.log
 GymFit-Club.jar
+
+GymFit-Studio.jar
+iniciar-gymfit.cmd

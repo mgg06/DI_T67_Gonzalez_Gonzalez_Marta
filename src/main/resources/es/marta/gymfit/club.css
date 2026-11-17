@@ -1,0 +1,79 @@
+.club { -fx-background-color: #15151B; -fx-font-family: 'Bahnschrift'; -fx-font-size: 13px; -fx-text-fill: #15151B; }
+.label, .radio-button, .check-box { -fx-text-fill: #15151B; }
+.menu-bar { -fx-background-color: #F4F3ED; -fx-padding: 2 20; }
+.menu-bar .label { -fx-font-size: 12px; }
+.context-menu { -fx-background-color: #F4F3ED; -fx-border-color: #15151B; -fx-padding: 6; }
+.brandbar .label { -fx-text-fill: #F4F3ED; }
+.tools .button { -fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 7 10; }
+.icon { -fx-fill: transparent; -fx-stroke: #15151B; -fx-stroke-width: 1.6; -fx-stroke-line-cap: round; -fx-stroke-line-join: round; }
+.eyebrow { -fx-font-size: 10px; -fx-font-weight: bold; }
+.form-card, .roster-card { -fx-background-color: #F4F3ED; -fx-padding: 14; -fx-border-color: rgba(21,21,27,0.30); -fx-border-radius: 3; -fx-background-radius: 3; }
+.small { -fx-font-size: 11px; }
+.text-field { -fx-padding: 6 10; }
+.date-picker .text-field { -fx-border-width: 0; -fx-background-color: transparent; }
+.combo-box .list-cell { -fx-text-fill: #15151B; }
+.combo-box-popup .list-view { -fx-background-color: #F4F3ED; }
+.combo-box-popup .list-cell { -fx-background-color: #F4F3ED; }
+.combo-box-popup .list-cell:filled:hover, .combo-box-popup .list-cell:filled:selected { -fx-background-color: #C2D5E2; -fx-text-fill: #15151B; }
+.check-box .box { -fx-border-radius: 2; -fx-background-radius: 2; }
+.text-field:focused, .combo-box:focused, .date-picker:focused, .button:focused, .radio-button:focused, .check-box:focused { -fx-effect: dropshadow(gaussian, rgba(194,213,226,0.35), 3, 0.6, 0, 0); }
+.track-decoration { -fx-fill: transparent; -fx-stroke: #C2D5E2; -fx-stroke-width: 1.2; -fx-opacity: 0.45; }
+.statusbar .label { -fx-text-fill: #F4F3ED; -fx-font-size: 11px; }
+.tooltip { -fx-font-family: 'Bahnschrift'; -fx-font-size: 12px; }
+.dialog-pane { -fx-background-color: #F4F3ED; -fx-font-family: 'Bahnschrift'; }
+.dialog-pane:header .header-panel { -fx-background-color: #F4F3ED; }
+.menu-bar, .brandbar { -fx-background-color: #15151B; }
+.menu-bar .label, .brandbar .label { -fx-text-fill: #F4F3ED; }
+.menu:hover, .menu:showing, .menu-item:focused { -fx-background-color: #FF6A2B; }
+.menu:hover .label, .menu:showing .label, .menu-item:focused .label { -fx-text-fill: #15151B; }
+.brandbar { -fx-background-color: #15151B; -fx-padding: 0 28 4; }
+.brand-caption { -fx-font-size: 11px; -fx-padding: 7 11; -fx-border-color: rgba(244,243,237,0.3); }
+.tools { -fx-background-color: #C2D5E2; -fx-border-color: transparent transparent rgba(21,21,27,0.2) transparent; -fx-padding: 3 22; -fx-spacing: 10; }
+.workspace { -fx-padding: 12 28; }
+.workspace > .HBox .eyebrow { -fx-text-fill: #C2D5E2; }
+.counter { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #FF6A2B; }
+.form-card { -fx-padding: 14 20; -fx-background-radius: 0; -fx-border-radius: 0; -fx-border-color: #FF6A2B; -fx-border-width: 4 0 0; }
+.section-title { -fx-font-size: 19px; -fx-font-weight: bold; }
+.roster-card { -fx-border-width: 4 0 0; -fx-border-color: #C2D5E2 transparent transparent; -fx-background-color: #15151B; -fx-padding: 12 0 0; }
+.roster-card .label { -fx-text-fill: #F4F3ED; }
+.roster-card .section-title { -fx-font-family: 'Impact'; -fx-font-size: 25px; }
+.roster-card .eyebrow { -fx-text-fill: #C2D5E2; }
+.text-field, .combo-box, .date-picker { -fx-background-color: #F4F3ED; -fx-border-color: rgba(21,21,27,0.55); -fx-border-radius: 0; -fx-background-radius: 0; -fx-min-height: 30; -fx-text-fill: #15151B; -fx-prompt-text-fill: rgba(21,21,27,0.7); -fx-border-width: 0 0 1; }
+.button { -fx-background-color: #F4F3ED; -fx-text-fill: #15151B; -fx-border-color: rgba(21,21,27,0.5); -fx-background-radius: 0; -fx-border-radius: 0; -fx-padding: 8 13; -fx-cursor: hand; }
+.button:hover, .tools .button:hover { -fx-background-color: #FF6A2B; }
+.button.primary { -fx-background-color: #FF6A2B; -fx-text-fill: #15151B; -fx-border-color: #15151B; -fx-font-weight: bold; -fx-padding: 9 24; -fx-font-size: 15px; }
+.button.primary:hover { -fx-background-color: #C2D5E2; }
+.button.danger-outline { -fx-text-fill: #15151B; -fx-border-color: #15151B; -fx-background-color: transparent; -fx-border-style: segments(3,3); -fx-font-size: 11px; }
+.roster-card .button.danger-outline { -fx-text-fill: #F4F3ED; -fx-border-color: rgba(244,243,237,0.6); }
+.roster-card .button.danger-outline:hover { -fx-text-fill: #15151B; -fx-background-color: #C2D5E2; }
+.radio-button .radio, .check-box .box { -fx-background-color: #F4F3ED; -fx-border-color: #15151B; }
+.radio-button .radio { -fx-border-radius: 12; -fx-background-radius: 12; }
+.radio-button:selected .dot, .check-box:selected .mark { -fx-background-color: #15151B; }
+.cuotas .radio-button { -fx-padding: 7 12; -fx-border-color: rgba(21,21,27,0.35); -fx-border-radius: 0; }
+.cuotas .radio-button:selected { -fx-background-color: #C2D5E2; -fx-border-color: #15151B; }
+.plan-heading { -fx-font-weight: bold; -fx-font-size: 14px; }
+.notice { -fx-background-color: rgba(194,213,226,0.20); -fx-padding: 8 11; -fx-border-color: #15151B; -fx-border-width: 0 0 0 3; -fx-font-size: 12px; }
+.notice.error { -fx-text-fill: #F4F3ED; -fx-border-color: #FF6A2B; -fx-background-color: #15151B; }
+.invalid { -fx-border-color: #15151B; -fx-border-width: 2; -fx-background-color: rgba(194,213,226,0.25); }
+.table-view { -fx-background-color: #15151B; -fx-border-color: rgba(244,243,237,0.25); -fx-padding: 0; -fx-fixed-cell-size: 40; }
+.table-view .column-header-background, .table-view .column-header, .table-view .filler { -fx-background-color: #C2D5E2; -fx-size: 34; }
+.table-view .column-header .label { -fx-text-fill: #15151B; -fx-font-size: 11px; -fx-alignment: CENTER_LEFT; -fx-padding: 0 8; }
+.table-row-cell { -fx-background-color: #15151B; -fx-border-color: transparent transparent rgba(244,243,237,0.15) transparent; }
+.table-row-cell:odd { -fx-background-color: rgba(194,213,226,0.08); }
+.table-cell { -fx-border-width: 0; -fx-text-fill: #F4F3ED; -fx-alignment: CENTER_LEFT; -fx-padding: 0 8; -fx-font-size: 12px; }
+.table-row-cell:filled:selected { -fx-background-color: #FF6A2B; }
+.table-row-cell:filled:selected .table-cell { -fx-text-fill: #15151B; }
+.club-note { -fx-padding: 14; -fx-background-color: #C2D5E2; }
+.club-note .label, .club-note .eyebrow { -fx-text-fill: #15151B; }
+.club-note .summary-title { -fx-font-family: 'Impact'; -fx-font-size: 20px; }
+.summary { -fx-font-size: 12px; -fx-line-spacing: 3; }
+.statusbar { -fx-background-color: #15151B; -fx-padding: 8 28; -fx-border-color: rgba(244,243,237,0.25) transparent transparent; -fx-border-width: 1 0 0; }
+.wordmark { -fx-font-size: 36px; -fx-font-weight: bold; -fx-padding: 0 18 0 0; -fx-font-family: 'Impact'; }
+.page-title { -fx-font-size: 34px; -fx-font-weight: bold; -fx-font-family: 'Impact'; -fx-text-fill: #F4F3ED; }
+.workflow { -fx-text-fill: #C2D5E2; -fx-font-size: 10px; }
+.track-logo { -fx-fill: #FF6A2B; -fx-stroke: transparent; -fx-stroke-width: 0; }
+
+.brand-context { -fx-font-size: 12px; -fx-text-fill: #C2D5E2; -fx-border-width: 0; -fx-padding: 0; }
+.summary-step { -fx-font-family: "Impact"; -fx-font-size: 25px; -fx-padding: 0 9 0 0; -fx-border-color: #15151B; -fx-border-width: 0 1 0 0; }
+.club-note { -fx-border-color: #FF6A2B; -fx-border-width: 0 0 0 4; }
+.club-note .summary-title { -fx-font-family: "Bahnschrift"; -fx-font-size: 15px; -fx-font-weight: bold; }

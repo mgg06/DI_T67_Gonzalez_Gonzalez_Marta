@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane prefHeight="840" prefWidth="1280" styleClass="club" stylesheets="@club.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.marta.gymfit.ClubController">
+  <fx:define></fx:define>
+  <top><VBox>
+    <MenuBar fx:id="menuBar">
+      <menus>
+        <Menu text="_Archivo"><items>
+          <MenuItem fx:id="nuevoMenu" onAction="#nuevo" text="Nuevo socio" />
+          <MenuItem fx:id="guardarMenu" onAction="#guardar" text="Guardar socio" />
+          <SeparatorMenuItem /><MenuItem onAction="#salir" text="Salir" />
+        </items></Menu>
+        <Menu text="_Editar"><items>
+          <MenuItem fx:id="deshacerMenu" onAction="#deshacer" text="Deshacer último cambio" />
+          <MenuItem fx:id="buscarMenu" onAction="#buscar" text="Buscar socio" />
+          <MenuItem onAction="#limpiar" text="Limpiar formulario…" />
+        </items></Menu>
+        <Menu text="_Socios"><items>
+          <MenuItem onAction="#editar" text="Editar socio seleccionado" />
+          <MenuItem onAction="#copiar" text="Copiar nombre" />
+          <MenuItem onAction="#baja" text="Dar de baja…" />
+          <MenuItem onAction="#reactivar" text="Reactivar socio" />
+          <SeparatorMenuItem /><MenuItem onAction="#eliminar" text="Eliminar ficha…" />
+        </items></Menu>
+        <Menu text="A_yuda"><items>
+          <MenuItem fx:id="ayudaMenu" onAction="#ayuda" text="Cómo usar GymFit" />
+          <MenuItem onAction="#guion" text="Guion del test de usabilidad" />
+        </items></Menu>
+      </menus>
+    </MenuBar>
+    <HBox alignment="CENTER_LEFT" spacing="18" styleClass="brandbar">
+      <SVGPath content="M 8 0 H 30 L 28 7 H 13 L 9 27 H 20 L 22 19 H 16 L 18 12 H 31 L 27 34 H 0 Z M 38 0 H 61 L 59 7 H 44 L 42 13 H 55 L 53 20 H 40 L 37 34 H 29 Z" styleClass="track-logo" />
+      <Label styleClass="wordmark" text="GYMFIT" />
+      <Label styleClass="brand-context" text="Recepción del club" />
+      <Region HBox.hgrow="ALWAYS" />
+      <Label styleClass="brand-context" text="Alta y mantenimiento de socios" />
+    </HBox>
+    <ToolBar styleClass="tools">
+      <items>
+        <Button onAction="#nuevo" text="Nuevo socio"><graphic><SVGPath content="M 7 1 V 13 M 1 7 H 13" styleClass="icon" /></graphic><tooltip><Tooltip text="Nuevo socio (Ctrl+N)" /></tooltip></Button>
+        <Button onAction="#guardar" text="Guardar"><graphic><SVGPath content="M 1 1 H 11 L 14 4 V 14 H 1 Z M 4 1 V 6 H 10 V 1 M 4 14 V 9 H 11 V 14" styleClass="icon" /></graphic><tooltip><Tooltip text="Guardar socio (Ctrl+S)" /></tooltip></Button>
+        <Separator />
+        <Button fx:id="deshacerButton" onAction="#deshacer" text="Deshacer"><graphic><SVGPath content="M 5 1 L 1 5 L 5 9 M 1 5 H 9 Q 15 5 15 11 V 14" styleClass="icon" /></graphic><tooltip><Tooltip text="Deshacer último cambio guardado (Ctrl+Z)" /></tooltip></Button>
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button onAction="#ayuda" text="Ayuda"><graphic><SVGPath content="M 3 4 Q 3 0 7 0 Q 12 0 12 4 Q 12 7 7 8 V 10 M 7 13 V 14" styleClass="icon" /></graphic><tooltip><Tooltip text="Ayuda y atajos (F1)" /></tooltip></Button>
+      </items>
+    </ToolBar>
+  </VBox></top>
+  <center><VBox spacing="10" styleClass="workspace">
+    <HBox alignment="CENTER_LEFT" spacing="20">
+      <VBox spacing="3"><Label styleClass="workflow" text="01 DATOS  /  02 CUOTA Y CLASES  /  03 GUARDAR" /><Label styleClass="page-title" text="NUEVO SOCIO" /></VBox>
+      <Region HBox.hgrow="ALWAYS" />
+      <VBox alignment="CENTER_RIGHT" spacing="3"><Label fx:id="contador" styleClass="counter" text="4 fichas / 3 socios activos" /><Label styleClass="workflow" text="DATOS DE DEMOSTRACIÓN" /></VBox>
+    </HBox>
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+      <VBox minWidth="680" prefWidth="758" spacing="5" styleClass="form-card" HBox.hgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT"><Label fx:id="tituloFormulario" styleClass="section-title" text="01 / Datos personales" /><Region HBox.hgrow="ALWAYS" /><Label styleClass="small" text="* Obligatorio" /></HBox>
+        <HBox spacing="16">
+          <VBox spacing="4" HBox.hgrow="ALWAYS"><Label fx:id="etiquetanombre" text="Nombre *" /><TextField fx:id="nombre" maxWidth="Infinity" promptText="Ej. Marta" /></VBox>
+          <VBox spacing="4" HBox.hgrow="ALWAYS"><Label fx:id="etiquetaapellidos" text="Apellidos *" /><TextField fx:id="apellidos" maxWidth="Infinity" promptText="Ej. González González" /></VBox>
+        </HBox>
+        <HBox spacing="16">
+          <VBox spacing="4" HBox.hgrow="ALWAYS"><Label fx:id="etiquetanacimiento" text="Fecha de nacimiento *" /><DatePicker fx:id="nacimiento" maxWidth="Infinity" promptText="dd/mm/aaaa" /><Label styleClass="small" text="Ej. 14/05/2003" /></VBox>
+          <VBox spacing="4" HBox.hgrow="ALWAYS"><Label fx:id="etiquetaprovincia" text="Provincia *" /><ComboBox fx:id="provincia" maxWidth="Infinity" promptText="Elige una provincia" /><Label styleClass="small" text="Selecciona el nombre, sin códigos" /></VBox>
+        </HBox>
+        <VBox spacing="5"><Label text="Sexo (opcional)" /><HBox spacing="20">
+          <RadioButton text="Mujer">
+                        <toggleGroup>
+                           <ToggleGroup fx:id="sexoGrupo" />
+                        </toggleGroup></RadioButton>
+          <RadioButton text="Hombre" toggleGroup="$sexoGrupo" />
+          <RadioButton text="Otro" toggleGroup="$sexoGrupo" />
+          <RadioButton selected="true" text="Prefiero no indicarlo" toggleGroup="$sexoGrupo" />
+        </HBox></VBox>
+        <Separator />
+        <VBox spacing="6"><Label styleClass="plan-heading" text="02 / Cuota y clases" /><Label styleClass="small" text="Cuota * - Elige una" /><HBox spacing="10" styleClass="cuotas">
+          <RadioButton text="Básica">
+                        <toggleGroup>
+                           <ToggleGroup fx:id="cuotaGrupo" />
+                        </toggleGroup></RadioButton>
+          <RadioButton text="Plus" toggleGroup="$cuotaGrupo" />
+          <RadioButton text="Premium" toggleGroup="$cuotaGrupo" />
+          <RadioButton text="Joven" toggleGroup="$cuotaGrupo" />
+          <RadioButton text="Senior" toggleGroup="$cuotaGrupo" />
+        </HBox></VBox>
+        <VBox spacing="5"><HBox><Label text="Clases (opcional)" /><Region HBox.hgrow="ALWAYS" /><Label styleClass="small" text="Marca una o varias" /></HBox>
+          <HBox fx:id="clasesBox" spacing="20"><CheckBox text="Spinning" /><CheckBox text="Pilates" /><CheckBox text="Yoga" /><CheckBox text="Zumba" /><CheckBox text="Funcional" /></HBox>
+        </VBox>
+        <VBox spacing="4"><Label fx:id="etiquetaiban" text="IBAN español (opcional, puedes añadirlo después)" /><TextField fx:id="iban" promptText="ES00 0000 0000 0000 0000 0000" /><Label styleClass="small" text="Puedes completar la domiciliación después del alta" /></VBox>
+        <Label fx:id="aviso" maxWidth="Infinity" minHeight="46" styleClass="notice" text="Completa los campos con * y pulsa &quot;Guardar socio&quot;" wrapText="true" />
+        <Region minHeight="0" VBox.vgrow="ALWAYS" />
+        <HBox alignment="CENTER_LEFT" spacing="10">
+          <Button onAction="#limpiar" styleClass="danger-outline" text="Vaciar campos…"><tooltip><Tooltip text="Vacía este formulario, con confirmación" /></tooltip></Button>
+          <Region HBox.hgrow="ALWAYS" />
+          <Button onAction="#nuevo" text="Cancelar" />
+          <Button fx:id="guardarButton" onAction="#guardar" styleClass="primary" text="Guardar socio" />
+        </HBox>
+      </VBox>
+      <VBox maxWidth="470" minWidth="360" prefWidth="414" spacing="9" styleClass="roster-card">
+        <HBox alignment="CENTER_LEFT"><Label styleClass="section-title" text="SOCIOS DEL CLUB" /><Region HBox.hgrow="ALWAYS" /><Label styleClass="eyebrow" text="BUSCAR / EDITAR" /></HBox>
+        <TextField fx:id="busqueda" accessibleText="Buscar socio por nombre o apellidos" promptText="Buscar nombre o apellidos" />
+        <Label fx:id="resultados" styleClass="small" text="4 fichas" />
+        <TableView fx:id="tabla" minHeight="170" VBox.vgrow="ALWAYS">
+          <columns><TableColumn fx:id="colNombre" prefWidth="185" text="Nombre y apellidos" /><TableColumn fx:id="colCuota" prefWidth="80" text="Cuota" /><TableColumn fx:id="colEstado" prefWidth="70" text="Estado" /></columns>
+          <placeholder><Label maxWidth="230" text="No hay coincidencias. Prueba otro nombre" wrapText="true" /></placeholder>
+        </TableView>
+        <HBox spacing="8"><Button maxWidth="Infinity" onAction="#editar" text="Editar ficha" HBox.hgrow="ALWAYS" /><Button onAction="#baja" styleClass="danger-outline" text="Dar de baja…" /></HBox>
+        <Label styleClass="small" text="Clic derecho para más acciones. Doble clic para editar" wrapText="true" />
+        <VBox spacing="7" styleClass="club-note"><HBox alignment="CENTER_LEFT" spacing="10"><Label text="03" styleClass="summary-step" /><Label styleClass="summary-title" text="RESUMEN DEL SOCIO" /></HBox><Separator /><Label fx:id="resumen" maxWidth="Infinity" minHeight="90" styleClass="summary" text="Completa los datos para ver aquí el resumen" wrapText="true" /><Label fx:id="progreso" styleClass="eyebrow" text="0 de 5 datos obligatorios" /></VBox>
+      </VBox>
+    </HBox>
+  </VBox></center>
+  <bottom><HBox spacing="20" styleClass="statusbar"><Label fx:id="estado" text="Preparado para una nueva alta" /><Region HBox.hgrow="ALWAYS" /><Label text="Ctrl+N Nuevo    Ctrl+S Guardar    Ctrl+F Buscar    F1 Ayuda" /></HBox></bottom>
+</BorderPane>

@@ -1,5 +1,29 @@
 {
-  "#15151B": 16.36,
-  "#FF6A2B": 6.36,
-  "#C2D5E2": 12.04
+  "metodo": "Luminancia relativa sRGB: (L mas clara + 0.05) / (L mas oscura + 0.05)",
+  "paleta_base": ["#15151B", "#F4F3ED", "#FF6A2B", "#C2D5E2"],
+  "umbral_texto_normal": 4.5,
+  "combinaciones": [
+    {
+      "texto": "#F4F3ED",
+      "fondo": "#15151B",
+      "uso": "Cabecera, tabla y aviso de error",
+      "ratio": 16.36,
+      "supera_umbral": true
+    },
+    {
+      "texto": "#15151B",
+      "fondo": "#FF6A2B",
+      "uso": "Guardar y filas seleccionadas",
+      "ratio": 6.36,
+      "supera_umbral": true
+    },
+    {
+      "texto": "#15151B",
+      "fondo": "#C2D5E2",
+      "uso": "Resumen, herramientas y encabezados de tabla",
+      "ratio": 12.04,
+      "supera_umbral": true
+    }
+  ],
+  "alcance": "Parejas opacas de la paleta base usadas en club.css. No constituye una certificacion completa de accesibilidad ni evalua todos los estados y transparencias"
 }

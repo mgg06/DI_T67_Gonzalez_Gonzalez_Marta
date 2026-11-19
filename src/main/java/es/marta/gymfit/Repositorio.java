@@ -58,8 +58,8 @@ public class Repositorio {
     public static List<Socio> ejemplos() {
         return new ArrayList<>(Arrays.asList(
             new Socio("GF-001", "Alberto", "Larios", LocalDate.of(1999,3,12), "Mujer", "Sevilla", "Plus", Arrays.asList("Pilates"), "", true),
-            new Socio("GF-002", "David", "Alonso Aguilar", LocalDate.of(2001,7,21), "Hombre", "Cádiz", "Joven", Arrays.asList("Spinning"), "", true),
-            new Socio("GF-003", "Laura", "Rubio Gallardo", LocalDate.of(1988,11,30), "Mujer", "Sevilla", "Premium", Arrays.asList("Yoga", "Pilates"), "", true),
+            new Socio("GF-002", "David", "Alonso Aguilar", LocalDate.of(1997,3,1), "Hombre", "Cádiz", "Joven", Arrays.asList("Spinning"), "", true),
+            new Socio("GF-003", "Laura", "Rubio Gallardo", LocalDate.of(2002,3,17), "Mujer", "Sevilla", "Premium", Arrays.asList("Yoga", "Pilates"), "", true),
             new Socio("GF-004", "Paula", "Rivas González", LocalDate.of(2005,2,2), "Hombre", "Huelva", "Básica", Collections.emptyList(), "", false)));
     }
 }
